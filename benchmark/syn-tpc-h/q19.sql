@@ -9,6 +9,6 @@ JOIN
 JOIN
     orders ON c_custkey = o_custkey
 GROUP BY
-    n_name, o_orderstatus
+    n_name
 ORDER BY
     Order_Count DESC;

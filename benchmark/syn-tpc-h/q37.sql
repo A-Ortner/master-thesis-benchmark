@@ -1,7 +1,7 @@
 SELECT
     r_name AS Region,
-    o_orderpriority AS Order_Priority,
-    COUNT(*) AS Order_Count
+    o_orderstatus AS Order_Status,
+    COUNT(DISTINCT o_orderkey) AS Total_Orders
 FROM
     region
 JOIN
@@ -10,7 +10,9 @@ JOIN
     customer ON n_nationkey = c_nationkey
 JOIN
     orders ON c_custkey = o_custkey
+JOIN
+    lineitem ON o_orderkey = l_orderkey
+JOIN
+    supplier ON l_suppkey = s_suppkey
 GROUP BY
-    r_name
-ORDER BY
-    Order_Count DESC;
+    r_name;

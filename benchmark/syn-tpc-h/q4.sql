@@ -15,6 +15,6 @@ JOIN
     supplier
     ON lineitem.l_suppkey = supplier.s_suppkey
 GROUP BY
-    s_nationkey, o_orderpriority
+    c_custkey
 ORDER BY
     Total_Revenue DESC;

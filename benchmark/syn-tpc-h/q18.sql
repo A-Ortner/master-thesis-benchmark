@@ -13,6 +13,6 @@ JOIN
 JOIN
     region ON n_regionkey = r_regionkey
 GROUP BY
-    p_type, r_name
+    l_partkey
 ORDER BY
     Min_Discount ASC;
